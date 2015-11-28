@@ -1,5 +1,5 @@
 #include "Algorithms.h"
-#include <algorithm>
+
 
 
 void allSubstr::getSortedSubstr(vector<string>& res, string word) {

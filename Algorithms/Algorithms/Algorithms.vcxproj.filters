@@ -21,6 +21,12 @@
     <ClCompile Include="suffixArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="topologicalSort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="disjointSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithms.h">
