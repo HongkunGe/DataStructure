@@ -17,8 +17,12 @@ disjointSet<T>::disjointSet(vector<T> items) {
 
 template<class T>
 void disjointSet<T>::makeSet(T c) {
-	parent[c] = c;
-	rank[c] = 0;
+	// if c is already in the sets, do nothing.
+	if (parent.count(c) == 0) {
+		parent[c] = c;
+		rank[c] = 0;
+		count++;
+	}
 }
 /* Given a char in the disjoint set, return the root of the set.  Also does the path compression.*/
 template<class T>
@@ -54,4 +58,11 @@ void disjointSet<T>::unionSet(T set1, T set2) {
 		parent[parent1] = parent2;
 		rank[parent2] ++;
 	}
+	count--; // one set less;
+}
+
+
+template<class T>
+int disjointSet<T>::size() {
+	return count;
 }

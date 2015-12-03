@@ -147,9 +147,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="disjointSet.cpp" />
+    <ClCompile Include="flipGame.cpp" />
+    <ClCompile Include="LongestSubstringTwoDistinct.cpp" />
+    <ClCompile Include="readBuf.cpp" />
+    <ClCompile Include="Source1.cpp" />
     <ClCompile Include="topologicalSort.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="suffixArray.cpp" />
+    <ClCompile Include="wordPatternII.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithms.h" />
