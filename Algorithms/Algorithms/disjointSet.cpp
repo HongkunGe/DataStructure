@@ -1,5 +1,5 @@
 #include "Algorithms.h"
-
+#include "exception.h"
 /*
 Two data structure to implement the disjoint set.
 1. linked list  https://www.youtube.com/watch?v=ID00PMy0-vE
@@ -27,6 +27,10 @@ void disjointSet<T>::makeSet(T c) {
 /* Given a char in the disjoint set, return the root of the set.  Also does the path compression.*/
 template<class T>
 T disjointSet<T>::find(T c) {
+	if (parent.count(c) == 0) {
+		throw notFound;
+		return 0;
+	}
 	if (parent[c] == c)
 		return c;
 
@@ -34,7 +38,13 @@ T disjointSet<T>::find(T c) {
 	parent[c] = find(parent[c]);
 	return parent[c];
 }
-
+/* Test if c is in the disjoint Set*/
+template<class T>
+bool disjointSet<T>::contain(T c) {
+	if (parent.count(c) == 0)
+		return false;
+	return true;
+}
 /* Combine two sets into one single set by rank. */
 template<class T>
 void disjointSet<T>::unionSet(T set1, T set2) {
@@ -42,6 +52,10 @@ void disjointSet<T>::unionSet(T set1, T set2) {
 	T parent1 = find(set1);
 	T parent2 = find(set2);
 
+	catch (exception& e)
+	{
+		cout << e.what() << endl;
+	}
 	// if set1 and set2 are already in the same set, do nothing.
 	if (parent1 == parent2)
 		return;

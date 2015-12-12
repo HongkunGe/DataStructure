@@ -9,6 +9,7 @@
 #include <queue>
 #include <unordered_map>
 #include "linkedList.h"
+#include "exception.h"
 using namespace std;
 
 class allSubstr {
@@ -35,6 +36,7 @@ public:
 	disjointSet() {};
 	void makeSet(T);
 	T find(T);
+	bool contain(T);
 	void unionSet(T set1, T set2);
 	int size();
 };
@@ -43,6 +45,14 @@ class parseStringToTree {
 	TreeNode* parseTree(string input, int& idx);
 public:
 	TreeNode* parseTree(string input);
+};
+
+class BigInt {
+	string number;
+public:
+	BigInt(string number);
+	string add(string otherNum);
+	// string multiply(string otherNum);
 };
 ////////////////////////////////////////////////////////////////////////
 //LeetCode Practice
@@ -71,12 +81,9 @@ public:
 
 class numIslands {
 	disjointSet<int> ds;
-	int m, n;
-	int index(int x, int y);
-	
+	int index(int x, int y, int n, int m);	
 public:
-	numIslands() : m(0), n(0) {};
-	int add(int x, int y);
+	int add(int x, int y, int n, int m);
 	vector<int> numIslands2(int m, int n, vector<pair<int, int>>& positions);
 };
 
@@ -85,6 +92,6 @@ class StrobogrammaticNumber {
 	int minus(string n1, string n2);
 	void numDfs(int& count, string instance, int max);
 public:
-	int strobogrammaticInRange(string low, string high)
+	int strobogrammaticInRange(string low, string high);
 };
 #endif ALGORITHMS_H
