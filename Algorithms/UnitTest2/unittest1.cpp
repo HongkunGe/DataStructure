@@ -120,4 +120,14 @@ namespace UnitTest2
 		}
 	};
 
+	TEST_CLASS(UnitTestBigInt) 
+	{
+		TEST_METHOD(ADD)
+		{
+			string n1 = "123234234", n2 = "893827";
+			BigInt bi(n1);
+			string res = bi.add(n2);
+			Assert::AreEqual(stoi(res), stoi(n1) + stoi(n2));
+		}
+	};
 }
